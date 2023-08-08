@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
 
-    const response = await fetch("http://localhost:3000/api/headerResponse");
+    const url = process.env.VERCEL_URL ? "https://$VERCEL_URL" : "http://localhost:3000";
+
+    const response = await fetch(`${url}/api/headerResponse`);
 
     let correctCookie = '';
 
