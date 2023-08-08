@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 
+const dynamic = 'force-dynamic'
+
 export default async function Home() {
 
   const url = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000";
-  const data = await fetch(`${url}/api`);
+  const data = await fetch(`${url}/api`, { cache: 'no-cache' });
 
   const json = await data.json();
 
