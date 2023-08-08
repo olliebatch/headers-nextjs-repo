@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { headers } from 'next/headers'
 
 export async function GET(request: NextRequest) {
+    const cookieStore = headers();
 
     const url = process.env.VERCEL_URL ? "https://$VERCEL_URL" : "http://localhost:3000";
 
