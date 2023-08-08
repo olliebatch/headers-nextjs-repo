@@ -9,11 +9,13 @@ export async function GET(request: NextRequest) {
     const response = await fetch(`${url}/api/headerResponse`);
 
     let correctCookie = '';
+    let cookieArray: string[] = [];
 
     response.headers.forEach((value, key) => {
       if (key === 'set-cookie') {
         console.log(`cookie log: ${value}`);
         correctCookie = value;
+        cookieArray.push(value)
       }
     });
   
@@ -25,5 +27,5 @@ export async function GET(request: NextRequest) {
     
     const newResp = new NextResponse();
 
-    return newResp;
+    return NextResponse.json({cookieArray});
 }
