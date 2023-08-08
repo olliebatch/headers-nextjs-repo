@@ -1,8 +1,12 @@
 Minimal rep : 
 
 Call localhost api -> only one header + log
+On localhost, only one single header line is shown when going to "http://localhost:3000"
+Only one array item sent through on "http://localhost:3000/api"
 
 Call Vercel api -> multiple header + logs
+On vercel, two  single header lines is shown when going to "https://headers-nextjs-repo.vercel.app/"
+Only one array item sent through on "https://headers-nextjs-repo.vercel.app/api"
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
