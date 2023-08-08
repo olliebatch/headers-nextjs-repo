@@ -14,7 +14,7 @@ export default async function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         {json.cookieArray.map((child: string) => {
-          return `single header ${child}`
+          return <div> <br></br>`single header ${child}`</div>
         })}
       </div>
     </main>
